@@ -1,0 +1,10 @@
+<!--Assignment 3-->
+<button class="btn btn-primary"
+        (click)="onTriggerDetails()">
+  Display details
+</button>
+<p  *ngIf="triggerText">{{initialText}}</p>
+<p *ngFor="let logItem of log"
+[ngStyle]="{backgroundColor: logItem >= 5 ? 'blue': 'white'}"
+[ngClass]="{'whiteText': logItem >= 5}">
+  {{logItem}}</p>

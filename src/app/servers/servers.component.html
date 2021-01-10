@@ -1,0 +1,30 @@
+<label>Server Name</label>
+<!--<input-->
+<!--  type="text"-->
+<!--  class="form-control"-->
+<!--(input)="onUpdateServerName($event)">-->
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName">
+<!--<p>{{ serverName }}</p>-->
+<button class="btn btn-primary"
+        [disabled]="!allowNewServer"
+        (click)="onCreateServer()">Add server</button>
+<!--<p>{{ serverCreationstatus }}</p>-->
+<p *ngIf="serverCreater">The server was created with name {{serverName}}</p>
+
+<app-server *ngFor="let server of servers"></app-server>
+
+<!--Assignment 2-->
+
+<!--<input-->
+<!--  type="text"-->
+<!--class="form-control"-->
+<!--[(ngModel)]="userName">-->
+<!--<p>Your username is: {{userName}}</p>-->
+<!--<button class="btn btn-primary"-->
+<!--  [disabled]="!userName"-->
+<!--  (click)="onResetUserName()">Reset</button>-->
+
+

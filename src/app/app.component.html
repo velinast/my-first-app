@@ -2,20 +2,28 @@
   <div class="col-md-12">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <p-button class="btn" label="Click" ></p-button>
+          <li class="nav-item"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-link" [routerLink]="'/'">Home</a>
           </li>
-          <li class="nav-item">
-            <p-button class="btn" label="Click" ></p-button>
+          <li class="nav-item"
+              routerLinkActive="active">
+            <a class="nav-link" [routerLink]="'user'">Add Users</a>
           </li>
-          <li class="nav-item">
-            <p-button class="btn" label="Click" ></p-button>
+          <li class="nav-item"
+              routerLinkActive="active">
+            <a class="nav-link" [routerLink]="'task'">Task</a>
+          </li>
+          <li class="nav-item"
+              routerLinkActive="active">
+            <a class="nav-link" [routerLink]="'server'">Server</a>
           </li>
         </ul>
       </div>
@@ -25,28 +33,8 @@
 </div>
 
 <div class="row">
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-header">
-        Input and button
-      </div>
-      <div class="row input-wrapper">
-        <div class="col-md-12 ">
-    <span class="p-float-label">
-    <input id="float-input" type="text" pInputText>
-    <label for="float-input">Username</label>
-    </span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <p-button class="btn" label="Click" ></p-button>
-        </div>
-      </div>
-    </div>
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <router-outlet></router-outlet>
   </div>
 </div>
-
-
-<app-servers></app-servers>
 
