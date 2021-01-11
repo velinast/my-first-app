@@ -9,22 +9,10 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{exact: true}">
-            <a class="nav-link" [routerLink]="'/'">Home</a>
+              *ngFor="let navArray of navArrays">
+            <a class="nav-link"  (click)="goTo(navArray)" >{{navArray.title}}</a>
           </li>
-          <li class="nav-item"
-              routerLinkActive="active">
-            <a class="nav-link" [routerLink]="'user'">Add Users</a>
-          </li>
-          <li class="nav-item"
-              routerLinkActive="active">
-            <a class="nav-link" [routerLink]="'task'">Task</a>
-          </li>
-          <li class="nav-item"
-              routerLinkActive="active">
-            <a class="nav-link" [routerLink]="'server'">Server</a>
-          </li>
+
         </ul>
       </div>
     </nav>
