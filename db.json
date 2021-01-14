@@ -1,0 +1,19 @@
+{
+  "users" : [
+    {
+      "id": "1",
+      "firstName": "Joe",
+      "lastName": "Doe",
+      "email": "john@gmail.com",
+      "age": 34,
+      "companyId": "1"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "description": "Lorem ipsum Apple tv, iWatch, apple music"
+    }
+  ]
+}

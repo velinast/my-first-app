@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {TableModule} from 'primeng/table';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {FormsModule} from '@angular/forms';
@@ -31,7 +32,8 @@ import {routing} from './app.routers';
     InputTextModule,
     ButtonModule,
     TabMenuModule,
-    routing
+    routing,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
