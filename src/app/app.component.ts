@@ -15,7 +15,9 @@ export class AppComponent {
   navArrays = [{title: 'Home', url: 'home'},
               {title: 'Add user', url: 'user'},
               {title: 'Task', url: 'task'},
-              {title: 'Server', url: 'server'}];
+              {title: 'Server', url: 'server'},
+              {title: 'Movies', url: 'movies'},
+              ];
   constructor(private routing: Router,
               private activatedRoute: ActivatedRoute,){
 

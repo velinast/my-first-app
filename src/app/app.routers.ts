@@ -13,5 +13,8 @@ const appRoutes: Routes = [
   {path: 'server',
     loadChildren: () => import ('./server/server.module').then(m => m.ServerModule)
   },
+  {path: 'movies',
+    loadChildren: () => import ('./movies/movies.module').then(m => m.MoviesModule)
+  },
 ];
 export const routing = RouterModule.forRoot(appRoutes);

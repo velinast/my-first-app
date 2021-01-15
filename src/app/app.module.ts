@@ -14,6 +14,8 @@ import {Assignment3Component} from './assignment3/assignment3.component';
 import {HomeComponent} from './home/home.component';
 import {AdduserComponent} from './adduser/adduser.component';
 import {routing} from './app.routers';
+import { MoviesComponent } from './movies/movies.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import {routing} from './app.routers';
     ServersComponent,
     Assignment3Component,
     HomeComponent,
-    AdduserComponent
+    AdduserComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import {routing} from './app.routers';
     ButtonModule,
     TabMenuModule,
     routing,
-    TableModule
+    TableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
