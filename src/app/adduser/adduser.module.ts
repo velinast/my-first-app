@@ -3,6 +3,7 @@ import {routing} from './adduser.routing';
 
 @NgModule({
   imports: [routing]
+
 })
 export class AdduserModule {
   static forRoot(): ModuleWithProviders<AdduserModule> {

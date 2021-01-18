@@ -1,22 +1,27 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-header">
-        Input and button
-      </div>
-      <div class="row input-wrapper">
-        <div class="col-md-12 ">
-          <span class="p-float-label">
-          <input id="float-input" type="text" pInputText>
-          <label for="float-input">Username</label>
-          </span>
+<div class="row-container">
+  <div class="row">
+    <div class="col-md-4">
+      <form [formGroup]="form" (ngSubmit)="showDialog(form.value)">
+        <div class="form-group">
+          <label> Search by director name</label>
+          <input type="text"
+                  class="form-control"
+                  formControlName="directorName">
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <p-button class="btn" label="Click" ></p-button>
-        </div>
-      </div>
+
+<!--        <button class="btn btn-primary">Search</button>-->
+        <button class="btn btn-primary"  >Search</button>
+      </form>
     </div>
   </div>
+
 </div>
+
+
+<p-dialog
+  header="Movies created by director"
+  [(visible)]="display">
+  {{movieName}}
+</p-dialog>
+
+
