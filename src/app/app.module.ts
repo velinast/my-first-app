@@ -20,6 +20,7 @@ import {AdduserComponent} from './adduser/adduser.component';
 import { MoviesComponent } from './movies/movies.component';
 
 import {routing} from './app.routers';
+import {AdduserModule} from './adduser/adduser.module';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {routing} from './app.routers';
     HttpClientModule,
     ReactiveFormsModule,
     DialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AdduserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

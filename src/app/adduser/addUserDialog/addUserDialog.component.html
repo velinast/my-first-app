@@ -1,0 +1,22 @@
+<p-dialog
+  header="Movies created by director"
+  [(visible)]="display"
+  (onHide)="hideInfo()">
+  {{movieName}}
+
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="dialogForm" (ngSubmit)="getPage(dialogForm.value)" >
+        <div class="form-group">
+          <label> Go to page</label>
+          <input type="text"
+                 class="form-control"
+                 formControlName="url">
+        </div>
+
+        <button class="btn btn-primary" >Go</button>
+      </form>
+    </div>
+  </div>
+
+</p-dialog>

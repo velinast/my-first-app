@@ -7,21 +7,26 @@
           <input type="text"
                   class="form-control"
                   formControlName="directorName">
+          <input type="text"
+                 class="form-control"
+                 formControlName="email">
         </div>
 
-<!--        <button class="btn btn-primary">Search</button>-->
-        <button class="btn btn-primary"  >Search</button>
+        <button
+          class="btn btn-primary"
+          [disabled]="!form.valid">Search</button>
       </form>
     </div>
   </div>
 
 </div>
 
+<app-add-user-dialog
+  (hideModal)="closeModal($event)"
+  [display]="display"
+  [movieName]="movieName"
+  (goToPage)="goTo($event)" >
 
-<p-dialog
-  header="Movies created by director"
-  [(visible)]="display">
-  {{movieName}}
-</p-dialog>
+</app-add-user-dialog>
 
 
