@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MoviesService} from '../movies.service';
+import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-server',
@@ -9,13 +11,28 @@ import {Component} from '@angular/core';
   }
   `]
 })
-export class ServerComponent {
+export class ServerComponent implements OnInit{
  serverID = 10;
  serverStatus = 'offline';
+ directorName: any;
+ movieName: any;
 
- constructor(){
+ constructor(private moviesService: MoviesService,
+             private route: ActivatedRoute){
   this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
  }
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+
+      this.directorName = params['director'];
+      this.moviesService.getDirectorName(this.directorName).subscribe((data:any[]) => {
+        this.directorName = data;
+        this.movieName = this.directorName.map(res => res["Title"]);
+      });
+    });
+
+  }
+
   // tslint:disable-next-line:typedef
  getColor() {
    return this.serverStatus === 'online' ? 'green' : 'red';

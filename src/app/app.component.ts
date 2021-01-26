@@ -18,14 +18,13 @@ export class AppComponent {
               {title: 'Server', url: 'server'},
               {title: 'Movies', url: 'movies'},
               ];
-  constructor(private routing: Router,
-              private activatedRoute: ActivatedRoute,){
+
+  constructor(private routing: Router){
 
   }
 
 
   goTo(url: { title: string; url: string }){
-    console.log(url);
     this.routing.navigate([url.url]);
   }
 }

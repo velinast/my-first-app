@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MoviesService} from '../movies.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 
 
 @Component({
@@ -10,24 +10,25 @@ import {Router} from '@angular/router';
 })
 export class AdduserComponent implements OnInit {
   @Input() navArrays;
-  // display: boolean = false;
   public display = false;
   form: FormGroup;
   director: Object[];
   movieName: any ;
   url: any;
-
+  name: any;
+  page: any;
 
   constructor(private moviesService: MoviesService,
-              private routing: Router) {
+              private routing: Router,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      'directorName': new FormControl(null, [Validators.required, Validators.minLength(3),
-        Validators.maxLength(5)]),
-      'email': new FormControl(null, Validators.required)
+      'directorName': new FormControl(null),
+      'email': new FormControl(null)
     });
+
   }
 
   // tslint:disable-next-line:ban-types
@@ -40,12 +41,19 @@ export class AdduserComponent implements OnInit {
     });
   }
   goTo(event: Object){
-    console.log(event);
+    console.log(event)
     this.routing.navigate([event['url']]);
   }
 
   closeModal(event) {
     this.display = event;
   }
-
+  redirectTo(director: Object){
+    this.routing.navigate(['movies/director/', director['directorName']])
+    console.log(director['directorName']);
+  }
+  redirectToDiffPage(directorName: Object){
+    this.routing.navigate(['server'], { queryParams: { director: directorName['directorName']} });
+    console.log(directorName['directorName']);
+  }
 }
