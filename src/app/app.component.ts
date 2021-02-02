@@ -1,7 +1,5 @@
-import {Component, EventEmitter} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Import} from '@angular/core/schematics/utils/typescript/imports';
-import {Url} from 'url';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -17,6 +15,7 @@ export class AppComponent {
               {title: 'Task', url: 'task'},
               {title: 'Server', url: 'server'},
               {title: 'Movies', url: 'movies'},
+              {title: 'Create', url: 'createUser'},
               ];
 
   constructor(private routing: Router){

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MoviesService} from '../movies.service';
+import {AppService} from '../app.service';
 import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
@@ -17,7 +17,7 @@ export class ServerComponent implements OnInit{
  directorName: any;
  movieName: any;
 
- constructor(private moviesService: MoviesService,
+ constructor(private moviesService: AppService,
              private route: ActivatedRoute){
   this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
  }

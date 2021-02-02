@@ -1,5 +1,5 @@
 {
-  "movies" : [
+  "movies": [
     {
       "Title": "Avatar",
       "Year": "2009",
@@ -468,6 +468,23 @@
         "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMjA3MTQ5Ml5BMl5BanBnXkFtZTgwOTA1NDU4OTE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
         "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMyNjg5ODYwNF5BMl5BanBnXkFtZTgwMTE1NDU4OTE@._V1_SY1000_CR0,0,1477,1000_AL_.jpg"
       ]
+    }
+  ],
+  "users": [
+    {
+      "userName": "test",
+      "email": "test@test.bg",
+      "id": "1"
+    },
+    {
+      "userName": "test1",
+      "email": "test1@abv.bg",
+      "id": "2"
+    },
+    {
+      "userName": "test3",
+      "email": "test3@abv.bg",
+      "id": "3"
     }
   ]
 }

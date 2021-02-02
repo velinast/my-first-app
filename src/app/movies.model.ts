@@ -8,4 +8,5 @@ export class MoviesModel {
   writer: string;
   actors: string;
   imdbRating: number;
+  movieName: string;
 }

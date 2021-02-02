@@ -21,6 +21,12 @@ import { MoviesComponent } from './movies/movies.component';
 
 import {routing} from './app.routers';
 import {AdduserModule} from './adduser/adduser.module';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers/app.store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import {EffectsModule} from '@ngrx/effects';
+import {CreateNewUserComponent} from './createNewUser/createNewUser.component';
 
 
 @NgModule({
@@ -32,7 +38,8 @@ import {AdduserModule} from './adduser/adduser.module';
     Assignment3Component,
     HomeComponent,
     AdduserComponent,
-    MoviesComponent
+    MoviesComponent,
+    CreateNewUserComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,10 @@ import {AdduserModule} from './adduser/adduser.module';
     ReactiveFormsModule,
     DialogModule,
     BrowserAnimationsModule,
-    AdduserModule
+    AdduserModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot(),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,27 @@
+<div class="row-container">
+  <div class="row">
+    <div class="col-md-4">
+      <form [formGroup]="form" (ngSubmit)="save(form.value)">
+        <div class="form-group">
+          <label> Username</label>
+          <input type="text"
+                 class="form-control"
+                 formControlName="userName">
+          <label> Email</label>
+          <input type="text"
+                 class="form-control"
+                 formControlName="email">
+          <label> Id</label>
+          <input type="text"
+                 class="form-control"
+                 formControlName="id">
+        </div>
+
+        <button
+          class="btn btn-primary"
+          [disabled]="!form.valid">Create User</button>
+      </form>
+    </div>
+  </div>
+
+</div>

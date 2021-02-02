@@ -1,4 +1,5 @@
 import {RouterModule, Routes} from '@angular/router';
+import {CreateNewUserModule} from './createNewUser/createNewUser.module';
 
 const appRoutes: Routes = [
   {path: 'home',
@@ -15,6 +16,9 @@ const appRoutes: Routes = [
   },
   {path: 'movies',
     loadChildren: () => import ('./movies/movies.module').then(m => m.MoviesModule)
+  },
+  {path: 'createUser',
+    loadChildren: () => import ('./createNewUser/createNewUser.module').then(m => m.CreateNewUserModule)
   },
 ];
 export const routing = RouterModule.forRoot(appRoutes);

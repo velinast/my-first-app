@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {MoviesService} from '../movies.service';
+import {AppService} from '../app.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 
 
@@ -18,7 +18,7 @@ export class AdduserComponent implements OnInit {
   name: any;
   page: any;
 
-  constructor(private moviesService: MoviesService,
+  constructor(private moviesService: AppService,
               private routing: Router,
               private route: ActivatedRoute) {
   }
